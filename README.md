@@ -72,3 +72,41 @@ in this it will run
 ```sql
 INSERT INTO person(firstname, lastname, gender, age) VALUES ("Jhon", "doe", "M", 30);
 ```
+
+### Retrive DATA
+
+- return all data from person table
+```python
+# this will return all the records in person table as list of Person Objects
+result = session.query(Person).all()
+for psn in result:
+    print(psn.firstname) 
+```
+### Retrive data by filtering
+if we want to filter data we can use filter function and pass the conditions
+```python
+result =  session.query(Person).filter(Person.firstname == 'Hirusha')
+```
+this will return all the record that has firstname as Hirusha
+
+
+### UPDATE RECORD
+
+```python
+result =  session.query(Person).filter(Person.firstname == 'Hirusha').one()
+
+result.lastname = "silva"
+session.add(result)
+session.commit()
+```
+
+### DELETE RECORD
+
+```python
+result = session.query(Person).filter(Person.firstname == 'Neil').one()
+
+session.delete(result)
+
+# commit (or flush)
+session.commit()
+```
