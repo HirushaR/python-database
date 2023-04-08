@@ -35,6 +35,22 @@ Base.metadata.create_all(bind=engine)
 #retrive data from Things table
 # result = session.query(Things).one()
 
-result = session.query(Things).filter(Things.owner_id == Person.id).filter(Person.firstname == 'Hirusha')
-for r in result:
-    print(r)
+#result = session.query(Things).filter(Things.owner_id == Person.id).filter(Person.firstname == 'Hirusha').one()
+# for r in result:
+#
+#      print(r)
+
+#update
+#result.description = 'van'
+
+#session.add(result)
+#session.commit()
+#print(result)
+
+#delete
+# result = session.query(Person).filter(Person.firstname == 'Neil').one()
+
+# session.delete(result)
+
+# # commit (or flush)
+# session.commit()
