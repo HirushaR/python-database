@@ -53,7 +53,11 @@ class Person(Base):
         self.lastname = last_name
         self.gender = gender
         self.age =  age
+
+
+Base.metadata.create_all(bind=engine)
 ```
+
 ```__tablename__``` we can assign name for table
 now when we ran the file it if the tabel person is not created it will create new table with those column. 
 
